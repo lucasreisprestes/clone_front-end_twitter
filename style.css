@@ -1,0 +1,572 @@
+/*Fazendo um reset nas configurações padrão*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Remover a marca de seleção quando posicionado o mouse*/
+input,
+button {
+    outline: 0;
+}
+
+/*Foi acresentado esta classe para alinhar os elementos no centro*/
+.content {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+body {
+    /*Aplicando definições padrão!*/
+    background: #E6ECF0;
+    font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+
+    /*renderizar as fontes sem pixelar*/
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    
+    /*------------------FIM-----------*/
+}
+
+header#main-header{
+   
+    height: 46px;
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);/* aqui é a sombra abaixo da Header*/
+    
+    /*Necessário para posicionar a layer/box
+     acima do banner, fazendo com que o efeito de sombra
+     aparessa*/
+    position: relative;
+    z-index: 0;
+}
+
+header#main-header .content{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+} 
+
+
+header#main-header nav ul{
+    display: flex;
+    list-style: none; /*tirar a bolinha padrão o item html*/
+}
+
+/*Retirando as margens do primeiro item da lista
+obs: (li:first-child) -> devem ficar juntos*/
+header#main-header nav ul li:first-child{
+    margin: 0px;
+}
+
+header#main-header nav ul li{
+    
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: #667580;
+    font-weight: bold;   
+    margin-left: 30px;
+}
+
+header#main-header nav ul li img{
+    margin-right: 7px;
+}
+
+header#main-header div.side{
+
+    display: flex;
+}
+
+/*Estilizando o input Sharch Twitter*/
+header#main-header div.side input{
+    width: 220px;
+    
+    border: 1px solid #E6ECF0;
+    height: 34px;
+    padding: 0px 30px 0 12px;
+    border-radius: 16px;
+    color: #667581;
+    font-size: 12px;
+    /*Foi necessário definir um tamanho (width) para o campo
+    em seguida apliquei cor + uma imagem dentro do campo e seu posicionamento */
+    background: #F5F8FA url('/app2/images/search.svg') no-repeat 190px center;
+}
+
+header#main-header div.side img {
+
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    margin: 0 15px;
+}
+
+header#main-header div.side button {
+
+    height: 34px;
+    background: #3bb9e3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 90px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #fff;
+    border: 0;
+    border-radius: 16px;
+
+}
+
+div.banner{
+    height: 380px;
+    width: 100%;
+    background: #3bb9e3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+div.bar{
+    height: 59px ;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);    
+}
+
+div.bar .content {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 270px; /*sobrescreveu o content 
+                            para dar margem a esquerda */
+
+    height: 100%;
+}
+
+div.bar .content ul{
+    display: flex;
+    list-style: none;
+    height: 100%; 
+}
+
+div.bar .content ul li{
+    display: flex;
+    flex-direction: column;/*para poder colocar um 
+                             item abaixo do outro*/
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 15px;    
+    position: relative; /*devido o after 
+    usar position: absulute*/
+   
+}
+
+/*Criado uma classe 'active' para
+adicionamos a barra azul quando o 
+item está selecionado - after deixa o elementos
+antes de fechar o box*/
+div.bar .content ul li.active::after{
+    content: '';/*propriedade do after*/
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom:0;
+    left: 0;
+    background: #3BB9E3;
+
+}
+
+div.bar .content ul li span{
+    color: #667580;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+div.bar .content ul li strong {
+    color: #667580;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+div.bar .content ul li.active strong {
+
+    color: #3BB9E3;
+
+}
+
+div.bar .content .actions {
+    display: flex;
+}
+
+div.bar .content .actions button{
+
+    height: 34px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+    width: 90px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #3BB9E3;
+    border: 1px solid #3BB9E3;
+    border-radius: 16px;
+
+    margin-right: 20px;
+}
+
+
+
+
+
+div.wrapper-content {
+    display:flex;
+}
+
+div.wrapper-content aside.profile {
+    width: 260px;
+}
+
+div.wrapper-content aside.profile img.avatar{
+    
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    margin-top: -120px;
+}
+
+div.wrapper-content aside.profile h2{
+    font-size: 21px;
+    color: #1f2226;
+    margin-top: 10px;
+}
+
+div.wrapper-content aside.profile span{
+    font-size: 14px;
+    color: #53626c;
+    
+}
+
+div.wrapper-content aside.profile p{
+    font-size: 14px;
+    color: #1F2226;
+    margin-top: 15px;
+}
+
+div.wrapper-content aside.profile ul{
+    list-style: none;
+    margin-top: 20px;
+}
+
+div.wrapper-content aside.profile ul.list li{
+   
+    font-size: 14px;
+    color: #657786;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+
+}
+
+/*Na primeira não preciso add uma margen*/
+div.wrapper-content aside.profile ul.list li:first-child {
+    margin:0px;
+}
+div.wrapper-content aside.profile ul.list li img{   
+    margin-right: 10px;
+}
+
+div.wrapper-content aside.profile .widget{   
+    margin-top: 20px;
+}
+
+div.wrapper-content aside.profile .widget strong{   
+    font-weight: normal;
+    color: #3BB9E3;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+div.wrapper-content aside.profile .widget strong img{   
+    margin-right: 5px;
+}
+
+div.wrapper-content aside.profile .followers ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;  
+}
+
+div.wrapper-content aside.profile .followers ul li{
+    width: 45px;
+    height: 45px;
+    background: #d0d5d9;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-right: 5px;
+    margin: 0 5px 10px 0;
+    flex-grow: 1;
+}
+
+
+div.wrapper-content aside.profile .followers ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+  
+}
+
+div.wrapper-content aside.profile .followers ul li{
+    width: 45px;
+    height: 45px;
+    background: #d0d5d9;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-right: 5px;
+    margin: 0 5px 5px 0;
+}
+
+div.wrapper-content aside.profile .images ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+  
+}
+
+div.wrapper-content aside.profile .images ul li{
+    width: 80px;
+    height: 80px;
+    background: #d0d5d9;
+    border-radius: 8px;
+    flex-shrink: 0; 
+    margin: 0 5px 5px 0;
+    flex-grow: 1;
+}
+
+div.wrapper-content .timeline{
+    flex-grow: 1;
+    background: #fff;
+    margin: 10px 20px 0;
+}
+
+div.wrapper-content .timeline nav{
+    border-bottom: 1px solid #E6ECF0;
+    padding: 10px 15px;
+}
+
+div.wrapper-content .timeline nav a {
+    text-decoration: none;
+    color:#3BB9E3;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+div.wrapper-content .timeline nav .active{
+    color: #1f2226;
+}
+
+div.wrapper-content .timeline ul.tweets{
+    list-style: none;   
+}
+
+div.wrapper-content .timeline ul.tweets li{
+    border-bottom: 1px solid #e6ecf0;
+    padding: 10px 15px;
+    display: flex;    
+}
+/* > pega a primeira img da raiz de filhos*/
+div.wrapper-content .timeline ul.tweets li > img{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+div.wrapper-content .timeline ul.tweets li .info{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+div.wrapper-content .timeline ul.tweets li .info strong{
+    font-size: 13px;
+    color: #1f2326;    
+}
+
+
+div.wrapper-content .timeline ul.tweets li .info strong span{
+    font-weight: normal;
+    font-size: 13px;
+    color: #7B8B9A;   
+}
+
+
+div.wrapper-content .timeline ul.tweets li .info p{
+    font-size: 14px;
+    color: #1f2326;   
+    margin-top: 5px;
+}
+
+div.wrapper-content .timeline ul.tweets li .actions{
+    display: flex;
+    margin-top: 20px;
+}
+
+div.wrapper-content .timeline ul.tweets li .actions a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #667580;
+    font-weight: bold;
+    font-size: 12px;
+    margin-left: 30px;
+}
+
+div.wrapper-content .timeline ul.tweets li .actions a:first-child {
+    margin-left: 0;
+}
+
+div.wrapper-content .timeline ul.tweets li .actions a img{
+    margin-right: 15px;
+}
+
+
+div.wrapper-content .timeline nav a:first-child {
+    margin-left:0 ;
+}
+
+div.wrapper-content aside.widgets {
+    width: 290px;
+    margin-top:10px;
+}
+
+/*Caixa branca para todo widget*/
+div.wrapper-content aside.widgets .widget{
+    background: #fff;
+    padding: 15px 15px;
+}
+
+div.wrapper-content aside.widgets .title{
+    display: flex;
+    align-items: baseline;
+}
+
+div.wrapper-content aside.widgets .title strong{
+
+    font-size: 18px;
+    color: #1F2226;
+}
+
+div.wrapper-content aside.widgets .title a{
+
+    font-size: 12px;
+    color: #3bb9e3;
+    text-decoration: none;/*PARA REMOVER A LINHA ABAIXO DO LINK*/
+    position: relative;
+    padding-left: 10px;
+
+}
+
+
+/*Criando uma bolinha no início do texto*/
+div.wrapper-content aside.widgets .title a::before{
+
+    content: "";/*Obrigatório quando usa o ::before e ::after !!!!*/
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: #222;
+    margin-left: 5px;
+    margin-right: 5px;
+    position: absolute;
+    left: 3px;
+    top: 6px;
+
+}
+
+
+div.wrapper-content aside.widgets .follow ul{
+
+    list-style: none;
+    margin-top: 10px;
+}
+
+div.wrapper-content aside.widgets .follow ul li{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #CCD6DD;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+/*Remover as configuraçõe do último elemento widget*/
+div.wrapper-content aside.widgets .follow ul li:last-child{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    border: 0;
+}
+
+div.wrapper-content aside.widgets .follow ul li .profile{
+    display: flex;
+    align-items:center;
+}
+
+div.wrapper-content aside.widgets .follow ul li .profile img{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+div.wrapper-content aside.widgets .follow ul li .profile .info{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+div.wrapper-content aside.widgets .follow ul li .profile .info strong{
+    font-size: 14px;
+    color:#1f2326;    
+}
+
+div.wrapper-content aside.widgets .follow ul li .profile .info strong span{
+    font-weight: normal;
+    color: #9a9a9a;
+}
+
+div.wrapper-content aside.widgets .follow ul li .profile .info button{
+
+    height: 27px;
+    color: #3bb9e3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 90px;
+    font-weight: bold;
+    font-size: 14px;
+    background: transparent;
+    border: 1px solid #3bb9e3;
+    border-radius: 16px;
+    margin-top: 4px;
+}
+
+div.wrapper-content aside.widgets .follow ul li  > a{
+
+    color:#CCD6DD;
+    text-decoration: none;
+    font-size: 14px;
+}
